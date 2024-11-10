@@ -64,17 +64,12 @@ if st.button("Aplicar K-Means") and data_scaled_df is not None:
 
     # Visualización de los clusters
     st.subheader("Visualización de Clusters")
-    
-    # Verificar si las columnas que estamos utilizando para el gráfico existen en los datos escalados
-    if data_scaled_df.shape[1] > 1:  # Asegurarse de que haya más de una columna para graficar
-        fig, ax = plt.subplots(figsize=(10, 6))
-        sns.scatterplot(x=data_scaled_df.iloc[:, 0], y=data_scaled_df.iloc[:, 1], hue=clusters, palette="viridis", s=100)
-        plt.xlabel(data_scaled_df.columns[0])
-        plt.ylabel(data_scaled_df.columns[1])
-        plt.title(f'Visualización de Clusters ({num_clusters} clusters): Ingreso Anual vs. Puntaje de Gasto')
-        st.pyplot(fig)
-    else:
-        st.write("No hay suficientes columnas para realizar el gráfico.")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.scatterplot(x=data_scaled_df.iloc[:, 0], y=data_scaled_df.iloc[:, 1], hue=clusters, palette="viridis", s=100)
+    plt.xlabel(data_scaled_df.columns[0])
+    plt.ylabel(data_scaled_df.columns[1])
+    plt.title(f'Visualización de Clusters ({num_clusters} clusters): Ingreso Anual vs. Puntaje de Gasto')
+    st.pyplot(fig)
 
 # Paso 5: Descarga de resultados (opcional)
 if st.button("Descargar Datos Segmentados"):
