@@ -1,0 +1,26 @@
+name: streamlit_v2
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - plotly
+  - streamlit
+  - scipy
+  - statsmodels
+  - altair
+  - pydeck
+  - pillow
+  - notebook
+  - jupyter
+  - ipykernel
+  - pip:
+      - streamlit
+      - streamlit-option-menu
+      - streamlit-pandas-profiling
+      - pycaret
